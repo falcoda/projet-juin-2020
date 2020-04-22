@@ -1,0 +1,323 @@
+html{
+    width: 100%;
+    color: white;
+    background-color: whitesmoke;
+    font-family:Gadugi, cursive ;
+    text-align: center;
+}
+
+div.header{ /*div contenant l'en tête */
+    display: block;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0;
+    width: 100%;
+    height: 90px;
+    left: 0;
+    z-index: 20;
+    text-align: left;
+
+}
+.navigation{
+    position: relative;
+    z-index: 30;
+
+}
+
+#rectangle{
+    width: 500px; /*372*/
+    background-color: lightgrey;
+    height: 15px;
+    position: absolute;
+    z-index: 3;
+    top : 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#head{
+
+    transition: all 2.5s ease;
+    background-color: transparent;
+}
+
+#imgCouv{
+    position: relative;
+    z-index: 1;
+    top:65px;
+    transition: all 1s;
+}
+
+#logoEnTete{ /* logo Noir/Blanc */
+    position: relative;
+    left: 20px;
+    top: 10px;
+    float: left;
+}
+
+.navBar { /* set de la taille et position de la barre des menus */
+    overflow: hidden;
+    position: relative;
+    top : -75px;
+    border-radius: 5px;
+    padding: 3px;
+    width: 600px; /*400*/
+    left: 51.5%;
+    font-size: 20px;
+
+
+}
+
+#titre{
+    position: relative;
+    left: 40px;
+    color: black;
+}
+
+.navBar a { /*set de la bare des menus persistante */
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navBar a:hover {/* Change background on mouse-over */
+    background: lightgrey;
+    color: black;
+    border-radius: 5px;
+    height: 10px;
+}
+
+#body{ /* balise avec tout le bas de la page */
+    margin-top: 140px;
+    z-index: 2;
+    position: absolute;
+
+}
+
+#soundNoirBlanc{ /*photo de couverture */
+    position: relative;
+    width:75% ;
+    height:75% ;
+
+}
+
+#content{ /* contenu*/
+    position: relative;
+    top : -14px;
+    margin-top: 10px;
+    background-color: lightslategray;
+    width: 65%;
+    display: inline-block;
+
+}
+
+#sectionApropos2, #sectionBaffle2, #sectionContact { /* alignement des textes */
+    text-align: left;
+    padding-left: 10px;
+
+}
+
+#logoCouleur{ /* logo dans a propos */
+    height: 15%;
+    width: 15%;
+    position: relative;
+    left: 80%;
+    top : -100px;
+
+}
+
+#presTexte{ /* taille de la zone de texte a propos */
+    width: 85%;
+    color: whitesmoke;
+}
+
+#liste{
+    font-size: 20px;
+}
+
+#listeDroite{
+    font-size: 25px;
+    position: absolute;
+    left: 300px;
+    top: 700px;
+}
+
+.label, .nomProd{
+    text-align: center;
+}
+
+.collection{
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    overflow: hidden;
+
+}
+.collection:hover{
+    border-bottom: 2px solid darkgray;
+}
+/*
+.zoom:hover{
+    transform: scale(0.90);
+    transition: all .3s;
+}*/
+
+.zoom{
+    border-radius: 3px;
+    cursor:pointer
+}
+
+.label{
+
+    text-align: center;
+}
+.nomProd{
+
+
+    text-align: center;
+}
+.group2{
+    text-align: center;
+    box-sizing: content-box;
+ }
+div.collection {
+    box-sizing:border-box;
+    width:50%;
+
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin-right:10% ;
+    margin-left:10% ;
+}
+#sectionContact{
+    position: relative;
+    left: 20%;
+}
+#nom, #prenom, #email, #message, #submit{
+    color:grey;
+    margin-bottom:10px ;
+    border-radius: 5px;
+    padding: 2px;
+}
+#submit, #comm{
+    margin-bottom:10px ;
+}
+
+
+/* modal */
+.modal{
+
+    display:none;
+    padding-top:100px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+   /* overflow:auto;/ barre pour descendre */
+
+}
+
+img.demo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+.modalContent{
+    z-index: 20;
+    margin:auto;
+    align-items: center;
+    background-color:grey;
+    opacity: 0.95;
+    position:relative;
+    padding:0.2em;
+    outline:0;
+    width:600px;
+    height: 500px;
+    border-radius: 20px;
+   /*overflow-y: scroll;*/
+
+}
+
+.modalFermer{
+    z-index: 30;
+    position:absolute;
+    right:10px;
+    top:10px}
+
+.modalTop{
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.modalNavBar{
+    background-color: lightblue;
+    height: 30px;
+}
+
+
+.modalLNav{
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(-0%,-50%)
+}
+.modalRNav{
+    position:absolute;
+    top:50%;
+    right:0;
+    transform:translate(0%,-50%);
+    -ms-transform:translate(0%,-50%)
+}
+
+
+.navBarLR{
+    position: relative
+}
+
+.articles{
+    float:left;
+    width:33.33333%
+}
+.fleche{
+    padding:0 16px;
+    text-align:center;
+    cursor:pointer;
+}
+.fleche:hover{
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 5px;
+}
+#caption{
+    text-align:center;
+    background-color: red;
+}
+
+#info{
+    position: absolute;
+    float: left;
+    width: 35%;
+    top: 250%;
+}
+
+#form{
+    position: relative;
+    float: right;
+    right: 25%;
+    width: 50%;
+}
+
+div#info a {
+    margin-bottom: 30px;
+
+}
+
+#connexion{
+    text-align: center;
+}
+

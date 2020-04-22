@@ -1,0 +1,4 @@
+service d'affichage des immage
+service d'envoyer les image
+service afficher les immages par type
+service de base de donnée nom/prénom/mail ->test si déja présent dans l
