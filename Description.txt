@@ -1,0 +1,20 @@
+Site web d'une ASBL de location de matériel son/lumière
+
+Le site ci présent est une vitrine afin de se renceigner sur une éventuelle location de matériel.
+
+Fonctionnalitées :
+
+-création du site via des images/texte présent sur la base de donnée
+-formulaire de contact permettant de d'envoyer un mail à l'ASBL
+-enregistrement des données clients dans une base de données
+-fonctionnalitée de tri du matériel par type
+-fonctionnalitée administrateur permettant de rajouter/modifier/supprimer du matériel en location
+
+Aspect technique : 
+
+service d'affichage des immage
+service d'envoi du matériel 
+service de suppresion du matériel
+service de modification de matériel
+service afficher les immages par type (tri)
+service de base de donnée nom/prénom/mail (sauvegarder les données utilisateurs)
