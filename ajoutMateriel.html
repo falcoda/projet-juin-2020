@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>ajout materiel</title>
+</head>
+<body>
+    <form onsubmit="return test(this)" id="form">
+        <label for=""></label><input type="text" name="nom">
+        <label for=""></label><input type="text" name="description">
+        <input type="file" id="pic" name="pic"
+               accept=".jpg, .jpeg, .png" >
+        <input type="submit">
+            liste catégorie
+        ->
+    </form>
+    <script>
+        function test() {
+            fo = document.getElementById('form');
+            alert(fo.pic.value.name);
+            return false;
+        }
+    </script>
+</body>
+</html>
