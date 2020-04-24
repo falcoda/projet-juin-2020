@@ -2,8 +2,10 @@
 <html lang="fr">
 <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
 <script src="js/falc.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/backend.js"></script>
 
-<head>
+<head >
     <meta charset="UTF-8">
     <title>falc'ohm system</title>
 
@@ -21,7 +23,7 @@
         </div>
     </div>
 </head>
-<body onscroll="changeHead();">
+<body onscroll="changeHead();" onload="chargerObj()">
 <script>function zoomeIn(n) {
     document.getElementsByClassName("zoom")[n].style.transform= "scale(0.90)";
     document.getElementsByClassName("zoom")[n].style.transition= "all .3s";
@@ -55,43 +57,7 @@ function zoomOut(n) {
                     <br>
 
                     <div class="collectionAll" style="position: relative; height: 1000px; ">
-                        <div class="group2">
-                            <div class="collection section1" onmouseout="zoomOut(0)" onmouseover="zoomeIn(0)" onclick="openModal();currentDiv(1)" style="position: absolute; right: 50%; width: 210px; height: 400px;">
-                                <div><img src="img/mth_solo3.jpg" alt="MTH4654" width="95%" height="95%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 0;">
-                                        <div class="label" >Subwoofer</div>
-                                        <div class="nomProd">MTH4654</div>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="collection section1" onmouseout="zoomOut(1)" onmouseover="zoomeIn(1)" onclick="openModal();currentDiv(2)" style="position: absolute;width: 210px; height: 400px; ">
-                                <div><img src="img/mth30.jpg" alt="MTH30" width="100%" height="100%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 55px;">
-                                        <div class="label" >Subwoofer</div>
-                                        <div class="nomProd">MTH30</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group2">
-                            <div class="collection" onmouseout="zoomOut(2)" onmouseover="zoomeIn(2)" onclick="openModal();currentDiv(3)" style="position: absolute; top: 460px;right: 50%; width: 210px; height: 400px;">
-                                <div><img src="img/Nexo.JPG" alt="Nexo Si2000" width="100%" height="100%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 125px;">
-                                        <div class="label" >Kick/Aigus</div>
-                                        <div class="nomProd">Nexo SI2000</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="collection" onmouseout="zoomOut(3)" onmouseover="zoomeIn(3)" onclick="openModal();currentDiv(4)" style="position: absolute; top: 460px;width: 210px; height: 400px; ">
-                                <div><img src="img/turboseb.jpg" alt="Tête 2 voies 450W" width="100%" height="100%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 55px;">
-                                        <div class="label" >Tête 2 voies</div>
-                                        <div class="nomProd">Turbotop</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
 

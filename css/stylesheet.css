@@ -146,6 +146,7 @@ div.header{ /*div contenant l'en tête */
 
 .label, .nomProd{
     text-align: center;
+    margin: 1px;
 }
 
 .collection{
@@ -169,15 +170,7 @@ div.header{ /*div contenant l'en tête */
     cursor:pointer
 }
 
-.label{
 
-    text-align: center;
-}
-.nomProd{
-
-
-    text-align: center;
-}
 .group2{
     text-align: center;
     box-sizing: content-box;
@@ -227,7 +220,7 @@ img.demo {
     margin-right: auto }
 
 .modalContent{
-    z-index: 20;
+    z-index: 200;
     margin:auto;
     align-items: center;
     background-color:grey;
@@ -243,7 +236,7 @@ img.demo {
 }
 
 .modalFermer{
-    z-index: 30;
+    z-index: 300;
     position:absolute;
     right:10px;
     top:10px}
