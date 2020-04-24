@@ -6,7 +6,7 @@
     <title>ajout materiel</title>
 </head>
 <body>
-    <form onsubmit="return test(this)" id="form">
+    <form onsubmit="return ajout()" id="form">
         <label for=""></label><input type="text" name="nom">
         <label for=""></label><input type="text" name="description">
         <input type="file" id="pic" name="pic"
@@ -15,10 +15,18 @@
             liste catégorie
         ->
     </form>
+    <p id="envoyer"></p>
     <script>
-        function test() {
+        function ajout() {
             fo = document.getElementById('form');
-            alert(fo.pic.value.name);
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('get','http://localhost/ajout?nom='+fo.nom.value+'&description='+fo.description.value+'&image='+fo.pic.value+'&id_categorie='+1,true);
+            xhr.send();
+            document.getElementById('envoyer').innerHTML = 'matériel bien envoyé';
+            fo.nom.value='';
+            fo.description.value='';
+            fo.pic.value='';
             return false;
         }
     </script>
