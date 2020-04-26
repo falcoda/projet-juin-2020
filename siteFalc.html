@@ -2,8 +2,10 @@
 <html lang="fr">
 <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
 <script src="js/falc.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/backend.js"></script>
 
-<head>
+<head >
     <meta charset="UTF-8">
     <title>falc'ohm system</title>
 
@@ -21,16 +23,8 @@
         </div>
     </div>
 </head>
-<body onscroll="changeHead();">
-<script>function zoomeIn(n) {
-    document.getElementsByClassName("zoom")[n].style.transform= "scale(0.90)";
-    document.getElementsByClassName("zoom")[n].style.transition= "all .3s";
-}
-function zoomOut(n) {
-    document.getElementsByClassName("zoom")[n].style.transform= "scale(1)";
-    document.getElementsByClassName("zoom")[n].style.transition= "all .3s";
-}
-</script>
+<body onscroll="changeHead();" onload="chargerObj()">
+
 <br>
 <div style="text-align: center;">
     <img src="img/sound2.jpg" alt="falc'ohm system " id="imgCouv">
@@ -39,11 +33,11 @@ function zoomOut(n) {
         <div id="content" class="main">
             <div class="section" id="sectionApropos2"><br>
                 <h2>Ω A propos de Falc'ohm System </h2>
-                <div id="presTexte">
-                    <p>Falc'ohm system est un soundsystem Belge crée en 2018 par 3 amis orgiginaire du brabant wallon.<br>
+                <div id="presTexte"> <!-- presentation -->
+                    <p>Falc'ohm system est un soundsystem Belge crée en 2018 par 3 amis originaire du brabant wallon.<br>
                         Ayant envie de partager leur passion de la musique, l'idée de construire un soundsystem ainsi que d'organiser des soirée est née.
                     </p>
-                </div>
+                </div><!-- logo présent dans la section contact -->
                 <img id="logoCouleur" src="img/falcohm_stem_final_couleur_min.png"
                      onmouseover="this.src='img/falcNoirB.png'" onmouseout="this.src='img/falcohm_stem_final_couleur_min.png'" alt="logo couleur" >
 
@@ -53,117 +47,25 @@ function zoomOut(n) {
                     <h2>Ω Présentation de notre matériel </h2>
 
                     <br>
-
-                    <div class="collectionAll" style="position: relative; height: 1000px; ">
-                        <div class="group2">
-                            <div class="collection" onmouseout="zoomOut(0)" onmouseover="zoomeIn(0)" onclick="openModal();currentDiv(1)" style="position: absolute; right: 50%; width: 210px; height: 400px;">
-                                <div><img src="img/mth_solo3.jpg" alt="MTH4654" width="95%" height="95%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 0;">
-                                        <div class="label" >Subwoofer</div>
-                                        <div class="nomProd">MTH4654</div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="collection" onmouseout="zoomOut(1)" onmouseover="zoomeIn(1)" onclick="openModal();currentDiv(2)" style="position: absolute;width: 210px; height: 400px; ">
-                                <div><img src="img/mth30.jpg" alt="MTH30" width="100%" height="100%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 55px;">
-                                        <div class="label" >Subwoofer</div>
-                                        <div class="nomProd">MTH30</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="group2">
-                            <div class="collection" onmouseout="zoomOut(2)" onmouseover="zoomeIn(2)" onclick="openModal();currentDiv(3)" style="position: absolute; top: 460px;right: 50%; width: 210px; height: 400px;">
-                                <div><img src="img/Nexo.JPG" alt="Nexo Si2000" width="100%" height="100%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 125px;">
-                                        <div class="label" >Kick/Aigus</div>
-                                        <div class="nomProd">Nexo SI2000</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="collection" onmouseout="zoomOut(3)" onmouseover="zoomeIn(3)" onclick="openModal();currentDiv(4)" style="position: absolute; top: 460px;width: 210px; height: 400px; ">
-                                <div><img src="img/turboseb.jpg" alt="Tête 2 voies 450W" width="100%" height="100%" class="zoom">
-                                    <div class="product-description" style="position: relative; left: 0; top: 55px;">
-                                        <div class="label" >Tête 2 voies</div>
-                                        <div class="nomProd">Turbotop</div>
-                                    </div>
-                                </div>
-                            </div>
+                    <form onchange="tri()">
+                    <label for="categ">Choisissez une catégorie</label>
+                    <select id="categ">
+                        <option>Tout</option>
+                    </select>
+                    </form>
+                    <div  style="position: relative ">
+                        <div class="collectionAll" style="position: relative; ">
                         </div>
 
 
 
                         <div id="myModal" class="modal ">
 
-                            <div class="modalContent">
-                                <span class="modalFermer" onclick="closeModal()" style="cursor:pointer">X</span>
-                                <div class="modalTop" style="max-width:500px">
-                                    <img class="mySlides demo " src="img/mth_solo3.jpg" style="width:20%;" alt="mth4654">
-                                    <img class="mySlides demo" src="img/mth30.jpg" style="width:20%;" alt="mth30">
-                                    <img class="mySlides demo" src="img/Nexo.JPG" style="width:20%;" alt="nexo">
-                                    <img class="mySlides demo" src="img/turboseb.jpg" style="width:20%;" alt="turboTop">
-                                </div><!-- Fin modal top -->
-                                <div class="navBarLR">
-                                    <p id="caption"></p>
-                                    <span class="modalLNav fleche" onclick="plusDivs(-1)"><</span>
-                                    <span class="modalRNav fleche" onclick="plusDivs(1)">></span>
-                                </div><!-- Fin modal nav -->
-
-                                <div id="modalFoot">
-                                    <p class="myDesc">un mth4654 est un sub de 1500w</p>
-                                    <p class="myDesc">un mth30 est un sub de 300 W</p>
-                                    <p class="myDesc">une paire de nexo est constitué de 2 kick et 2 aigus</p>
-                                    <p class="myDesc">une turboTop est une tête 2 voie</p>
-                                </div>
-
-
-                            </div> <!-- Fin modal content -->
+                             <!-- Fin modal content -->
                         </div> <!-- fin modal -->
 
                         <script>
-                            function openModal() {
-                                document.getElementById('myModal').style.display = "block"; //ouvrir la modal
-                            }
 
-                            function closeModal() {
-                                document.getElementById('myModal').style.display = "none"; //fermer la modal
-                            }
-
-                            var slideIndex = 1;
-                            showDivs(slideIndex);
-
-                            function plusDivs(n) { //permet la navigation entre les photos
-                                showDivs(slideIndex += n);
-                            }
-
-                            function currentDiv(n) { //permet de sélectionner la photo à ouvrir
-                                showDivs(slideIndex = n);
-                            }
-
-                            function showDivs(n) {
-                                var i;
-                                var x = document.getElementsByClassName("mySlides");
-                                var dots = document.getElementsByClassName("demo");
-                                var captionText = document.getElementById("caption");
-                                if (n > x.length) {slideIndex = 1} //permet de tourner en boucle
-                                if (n < 1) {slideIndex = x.length}
-                                for (i = 0; i < x.length; i++) {
-                                    x[i].style.display = "none";  //afficher qu'une photo à la fois
-                                }
-
-                                x[slideIndex-1].style.display = "block"; // afficher la photo
-                                //document.getElementById("modalFoot").innerHTML="<p>"+dots[slideIndex-1].alt+"</p>";
-                                captionText.innerHTML = dots[slideIndex-1].alt; //indiquer l'attribut de la photo dans la barre horrizontale
-
-                                var y = document.getElementsByClassName("myDesc");
-                                for (i = 0; i < x.length; i++) {
-                                    y[i].style.display = "none";  //afficher qu'un texte à la fois
-
-                                }
-                                y[slideIndex-1].style.display = "block"; //affiche le texte
-                            }
                         </script>
 
                     </div>
