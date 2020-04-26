@@ -43,7 +43,7 @@ function createHtml(tabl) { //creation de l'html
     }
     document.getElementsByClassName("collectionAll")[0].style.height = hauteur+"px";  //permet d'ajuster la hauteur
     document.getElementsByClassName("collectionAll")[0].innerHTML=html;  //remplace le html présent par celui crée
-    createModal(); //appèle la fonction pour créer les modales
+    createModal(tabl); //appèle la fonction pour créer les modales
 }
 
 function chargerCateg() {  //créer la liste des catégories en fonctions de la db
@@ -78,18 +78,20 @@ function tri(){   //fonction permettant d'afficher que certaines catégories
             count+=1;  // count +1 après une boucle
         }
 
-        createHtml(tablObj2)  //création de l'html avec la fonction précédente
+        createHtml(tablObj2);  //création de l'html avec la fonction précédente
+        createModal(tablObj2);
     }
+
 }
 
-function createModal(){  //création de la modal en fonction de la db
+function createModal(tabl){  //création de la modal en fonction de la db
     let html=" <div class='modalContent'>"+
         "<span class='modalFermer' onclick='closeModal()' style='cursor:pointer'>X</span>"+
         "<div class='modalTop' style='max-width:500px'>"; //initialisation d'une variable
     let html2 = "";
-    for(let i in tablObj){ //bouclage sur le tableau d'objet
-        html += "<img class='mySlides demo '' src='img/"+tablObj[i].nom+".jpg' style='width:20%;' alt='"+tablObj[i].nom+"'>";
-        html2 += "<p class='myDesc'>"+tablObj[i].description+"</p>";  //créer les différentes modal sur bases des éléments du tableau
+    for(let i in tabl){ //bouclage sur le tableau d'objet
+        html += "<img class='mySlides demo '' src='img/"+tabl[i].nom+".jpg' style='width:20%;' alt='"+tabl[i].nom+"'>";
+        html2 += "<p class='myDesc'>"+tabl[i].description+"</p>";  //créer les différentes modal sur bases des éléments du tableau
     }
 
     html +="</div><!-- Fin modal top --> <div class='navBarLR'> <p id='caption'></p>"+
