@@ -1,6 +1,5 @@
 let tablObj ;
 function chargerObj(){
-    chargerCateg();
     let xhr = new XMLHttpRequest(); //requete a la db
     xhr.open("get",'http://localhost:82/creation', true);  //recupère un tableau d'objet
     xhr.onload=function () {
@@ -46,16 +45,16 @@ function createHtml(tabl) { //creation de l'html
     createModal(tabl); //appèle la fonction pour créer les modales
 }
 
-function chargerCateg() {  //créer la liste des catégories en fonctions de la db
+function chargerCateg(id) {  //créer la liste des catégories en fonctions de la db
     let xhr =new XMLHttpRequest(); //création d'une nouvelle requète
     xhr.open("get","http://localhost:82/categorie", true);  //demande une liste des catégories
     xhr.onload = function(){
         xhr= JSON.parse(xhr.response); //transformation en tableau d'objets
         let categori = "";
         for(let i in xhr){  //boucle sur le tableau d'objet
-            categori += "<option value='"+xhr[i].categorie+"'>"+xhr[i].categorie+"</option>";  //creations des options de la liste déroulante
+            categori += "<option value='"+xhr[i].categorie+"' id='"+xhr[i].id_categorie+"'>"+xhr[i].categorie+"</option>";  //creations des options de la liste déroulante
         }
-        document.getElementById("categ").innerHTML += categori  //ajout dans le html des options
+        document.getElementById(id).innerHTML += categori  //ajout dans le html des options
 
     };
     xhr.send();  //envois
@@ -102,4 +101,16 @@ function createModal(tabl){  //création de la modal en fonction de la db
      html += html2 +"</div></div>";
     document.getElementById("myModal").innerHTML = html ; //insersion dans le html
 
+}
+function ajout() {
+    let fo = document.getElementById('form');
+    let selectElmt = document.getElementById("catego");
+    let valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].id;
+    let xhr = new XMLHttpRequest();
+    xhr.open('get','http://localhost:82/ajout?nom='+fo.nom.value+'&description='+fo.description.value+'&id_categorie='+valeurselectionnee,true);
+    xhr.send();
+    document.getElementById('envoyer').innerHTML = 'matériel bien envoyé';
+    fo.nom.value='';
+    fo.description.value='';
+    return false;
 }
