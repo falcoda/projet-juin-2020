@@ -1,15 +1,14 @@
 let tablObj ;
+
 function chargerObj(){
     let xhr = new XMLHttpRequest(); //requete a la db
-    xhr.open("get",'http://localhost:82/creation', true);  //recupère un tableau d'objet
+    xhr.open("get",'http://localhost/creation', true);  //recupère un tableau d'objet
     xhr.onload=function () {
-                xhr= JSON.parse(xhr.response);  //transformation en tableau d'objet
-                tablObj= xhr.slice(); //copie
+        xhr= JSON.parse(xhr.response);  //transformation en tableau d'objet
+        tablObj= xhr.slice(); //copie
         createHtml(xhr);
     };
     xhr.send(); //envois
-
-
 }
 
 function createHtml(tabl) { //creation de l'html
@@ -45,9 +44,10 @@ function createHtml(tabl) { //creation de l'html
     createModal(tabl); //appèle la fonction pour créer les modales
 }
 
+
 function chargerCateg(id) {  //créer la liste des catégories en fonctions de la db
     let xhr =new XMLHttpRequest(); //création d'une nouvelle requète
-    xhr.open("get","http://localhost:82/categorie", true);  //demande une liste des catégories
+    xhr.open("get","http://localhost/categorie", true);  //demande une liste des catégories
     xhr.onload = function(){
         xhr= JSON.parse(xhr.response); //transformation en tableau d'objets
         let categori = "";
@@ -58,6 +58,7 @@ function chargerCateg(id) {  //créer la liste des catégories en fonctions de l
 
     };
     xhr.send();  //envois
+
 }
 
 function tri(){   //fonction permettant d'afficher que certaines catégories
@@ -113,4 +114,5 @@ function ajout() {
     fo.nom.value='';
     fo.description.value='';
     return false;
+
 }

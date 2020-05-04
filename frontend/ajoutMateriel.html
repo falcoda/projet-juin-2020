@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>ajout materiel</title>
-    <script src="js/backend.js"></script>
+    <script src="js/MartingLenoirDiego-traitement-ajoutMateriel.js"></script>
+    <script src="js/DallenogareCorentin-traitement-affichage.js"></script>
+    <script src="js/falc.js"></script>
 </head>
 <body onload="chargerCateg('catego')" >
-    <form onsubmit="return ajout()" id="form">
+    <form onsubmit="return ajout()" id="form"> <!--  formulaire d'envoie pour la création dans la db des matériels  -->
         <label for="">Nom :</label><input type="text" name="nom">
         <label for="">Description :</label><input type="text" name="description">
         <label for="">Categorie :</label>
