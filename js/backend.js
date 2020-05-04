@@ -89,7 +89,7 @@ function createModal(tabl){  //création de la modal en fonction de la db
         "<div class='modalTop' style='max-width:500px'>"; //initialisation d'une variable
     let html2 = "";
     for(let i in tabl){ //bouclage sur le tableau d'objet
-        html += "<img class='mySlides demo '' src='img/"+tabl[i].nom+".jpg' style='width:20%;' alt='"+tabl[i].nom+"'>";
+        html += "<img class='mySlides demo '' src='img/"+tabl[i].nom+".jpg' style='width:40%;' alt='"+tabl[i].nom+"'>";
         html2 += "<p class='myDesc'>"+tabl[i].description+"</p>";  //créer les différentes modal sur bases des éléments du tableau
     }
 
