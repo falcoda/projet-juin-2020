@@ -103,16 +103,3 @@ function createModal(tabl){  //création de la modal en fonction de la db
     document.getElementById("myModal").innerHTML = html ; //insersion dans le html
 
 }
-function ajout() {
-    let fo = document.getElementById('form');
-    let selectElmt = document.getElementById("catego");
-    let valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].id;
-    let xhr = new XMLHttpRequest();
-    xhr.open('get','http://localhost:82/ajout?nom='+fo.nom.value+'&description='+fo.description.value+'&id_categorie='+valeurselectionnee,true);
-    xhr.send();
-    document.getElementById('envoyer').innerHTML = 'matériel bien envoyé';
-    fo.nom.value='';
-    fo.description.value='';
-    return false;
-
-}
