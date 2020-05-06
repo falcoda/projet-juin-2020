@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 <script src="js/MartingLenoirDiego-traitement-ajoutMateriel.js"></script>
 <script src="js/DallenogareCorentin-traitement-affichage.js"></script>
+<script src="js/DerwaAlexandre-traitement-ajoutPersonne.js"></script>
 <script src="js/falc.js"></script>
 
 <head>
@@ -81,7 +82,7 @@
                     <br>
                     <?php $nameErr = $emailErr = $spam =  ""; ?>
                     <div id="form" >
-                        <form name="contact" id="contact" >
+                        <form name="contact" id="contact" onsubmit="ajoutPersonne(this);return false;">
                             <label for="nom">Nom</label><br>
                             <input  name="nom" id="nom" type="text" maxlength="15" required placeholder="Nom">
                             <input id="prenom" name="prenom" type="text" required placeholder="Prénom">
