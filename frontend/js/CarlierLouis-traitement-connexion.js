@@ -8,10 +8,11 @@ function connect() { //fonction d'ajout matériels
         xhr=JSON.parse(xhr.response);
         for(let i=0; i<xhr.length; i++) {
             if((xhr[i].pseudo==user) & (xhr[i].psw==psw)){
-                return true;
+                document.location.href ="ajoutMateriel";
             }
         }
     }
     xhr.send();
+    console.log("erreur");
     return false;
 }

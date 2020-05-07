@@ -8,7 +8,8 @@
     <script src="js/falc.js"></script>
 </head>
 <body onload="chargerCateg('catego')" >
-    <form onsubmit="return ajout()" id="form"> <!--  formulaire d'envoie pour la création dans la db des matériels  -->
+<div style="background-color: lightslategray; height: 10em; margin-top: 10em; width: 65%; ">
+    <form onsubmit="return ajout()" id="form" style="padding-top: 5%;"> <!--  formulaire d'envoie pour la création dans la db des matériels  -->
         <label for="">Nom :</label><input type="text" name="nom">
         <label for="">Description :</label><input type="text" name="description">
         <label for="">Categorie :</label>
@@ -17,5 +18,6 @@
         <input type="submit">
     </form>
     <p id="envoyer"></p>
+</div>
 </body>
 </html>
