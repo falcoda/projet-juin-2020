@@ -4,9 +4,8 @@ function chargerObj(){
     let xhr = new XMLHttpRequest(); //requete a la db
     xhr.open("get",'http://localhost/creation', true);  //recupère un tableau d'objet
     xhr.onload=function () {
-        xhr= JSON.parse(xhr.response);  //transformation en tableau d'objet
-        tablObj= xhr.slice(); //copie
-        createHtml(xhr);
+        tablObj= JSON.parse(xhr.response).slice(); //copie + transformation en tableau d'objet
+        createHtml(tablObj.slice());
     };
     xhr.send(); //envois
 }
@@ -49,10 +48,10 @@ function chargerCateg(id) {  //créer la liste des catégories en fonctions de l
     let xhr =new XMLHttpRequest(); //création d'une nouvelle requète
     xhr.open("get","http://localhost/categorie", true);  //demande une liste des catégories
     xhr.onload = function(){
-        xhr= JSON.parse(xhr.response); //transformation en tableau d'objets
+        let tabl= JSON.parse(xhr.response).slice(); //transformation en tableau d'objets
         let categori = "";
-        for(let i in xhr){  //boucle sur le tableau d'objet
-            categori += "<option value='"+xhr[i].categorie+"' id='"+xhr[i].id_categorie+"'>"+xhr[i].categorie+"</option>";  //creations des options de la liste déroulante
+        for(let i in tabl){  //boucle sur le tableau d'objet
+            categori += "<option value='"+tabl[i].categorie+"' id='"+tabl[i].id_categorie+"'>"+tabl[i].categorie+"</option>";  //creations des options de la liste déroulante
         }
         document.getElementById(id).innerHTML += categori  //ajout dans le html des options
 
@@ -84,10 +83,10 @@ function tri(){   //fonction permettant d'afficher que certaines catégories
 
 }
 
-function createModal(tabl){  //création de la modal en fonction de la db
+function createModal(tabl){  //création de la modal en fonction de la BDD
     let html=" <div class='modalContent'>"+
         "<span class='modalFermer' onclick='closeModal()' style='cursor:pointer'>X</span>"+
-        "<div class='modalTop' style='max-width:500px'>"; //initialisation d'une variable
+        "<div class='modalTop' style='max-width:500px'>"; //initialisation d'une variable texte
     let html2 = "";
     for(let i in tabl){ //bouclage sur le tableau d'objet
         html += "<img class='mySlides demo '' src='img/"+tabl[i].nom+".jpg' style='width:40%;' alt='"+tabl[i].nom+"'>";
@@ -102,4 +101,21 @@ function createModal(tabl){  //création de la modal en fonction de la db
      html += html2 +"</div></div>";
     document.getElementById("myModal").innerHTML = html ; //insersion dans le html
 
+}
+
+
+function chargerMsg() {  //permet d'afficher les messages des personnes
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('get','http://localhost/messages',true);
+    xhr.onload= function() {
+        document.getElementById("sectionMessages").innerHTML = xhr.response; //recuperation de l'html créé dans la DDB
+        document.getElementById("body").style.height = (document.getElementsByTagName('p').length + document.getElementsByTagName('b').length *7)+"em"; //ajustement de la hauteur
+    };
+    xhr.send() ;
+}
+
+function cacherMsg() { //cacher les messages
+    document.getElementById('sectionMessages').innerHTML="";
+    document.getElementById("body").style.height =10+"em";
 }

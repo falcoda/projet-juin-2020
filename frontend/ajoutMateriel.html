@@ -7,17 +7,21 @@
     <script src="js/DallenogareCorentin-traitement-affichage.js"></script>
     <script src="js/falc.js"></script>
 </head>
-<body onload="chargerCateg('catego')" >
-<div style="background-color: lightslategray; height: 10em; margin-top: 10em; width: 65%; ">
+<body  onload="chargerCateg('catego')" >
+<div id="body" style="background-color: lightslategray; height: 10em; margin-top: 10em; width: 65%; ">
     <form onsubmit="return ajout()" id="form" style="padding-top: 5%;"> <!--  formulaire d'envoie pour la création dans la db des matériels  -->
-        <label for="">Nom :</label><input type="text" name="nom">
-        <label for="">Description :</label><input type="text" name="description">
-        <label for="">Categorie :</label>
+        <label for="nom">Nom :</label><input type="text" name="nom" id="nom">
+        <label for="desc">Description :</label><input type="text" name="description" id="desc">
+        <label for="catego">Categorie :</label>
         <select id="catego">
         </select>
         <input type="submit">
     </form>
     <p id="envoyer"></p>
+    <button onclick="chargerMsg();" name="charger"> Charger Messages</button>
+    <button onclick="cacherMsg();" name="charger"> Charger Messages</button>
+    <div id="sectionMessages"></div>
 </div>
+
 </body>
 </html>

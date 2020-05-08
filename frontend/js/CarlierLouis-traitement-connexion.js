@@ -11,7 +11,7 @@ function connect() { //fonction d'ajout matériels
                 document.location.href ="ajoutMateriel";
             }
         }
-    }
+    };
     xhr.send();
     console.log("erreur");
     return false;

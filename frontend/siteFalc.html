@@ -1,7 +1,15 @@
+<!-- Dallenogare Corentin -->
+<!-- Derwa Alexandre -->
+<!-- Marting Lenoir Diego -->
+<!-- Carlier Louis -->
+<!-- Projet JUIN 2020, Site Web de L'ASBL FALC'OHM SYSTEM -->
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-<script src="js/MartingLenoirDiego-traitement-ajoutMateriel.js"></script>
+<script src="js/MartingLenoirDiego-traitement-ajoutMateriel.js"></script>     <!-- insertion des différents codes js -->
 <script src="js/DallenogareCorentin-traitement-affichage.js"></script>
 <script src="js/DerwaAlexandre-traitement-ajoutPersonne.js"></script>
 <script src="js/falc.js"></script>
@@ -15,17 +23,17 @@
         <h1 id="titre"> FALC'OHM SYSTEM</h1>
         <div class="navBar" id="enTete" >
             <div class="navigation">
-                <a href="#sectionApropos" >A Propos</a>
+                <a href="#sectionApropos" >A Propos</a>   <!-- navigation -->
                 <a href="#sectionBaffle" >Haut parleurs</a>
                 <a href="#sectionContact" >Contacts</a>
-                <a href="connexion">Connexion</a> <!-- peut être à la place de faire un onglet on crée un page qu'on accede en changant manuellement l'addresse. Ensuite on se connecte et quand la connection est faite on affiche 3 options ajouter ,modifier, supprimer(ça fera 3 services) sinon j'ai trouver la solution pour ajouter et modif dans la bdd c'est pas complexe -->
+                <a href="connexion">Connexion</a> <!-- onglet permettant la connexion pour le rajout de données -->
             </div>
             <div id="rectangle"></div>
         </div>
     </div>
 </head>
-<body onscroll="changeHead();" onload="chargerObj();chargerCateg('categ')" >
-
+<body onscroll="changeHead();" onload="chargerObj();chargerCateg('categ')" > <!-- au scroll, animation de la barre d'état + de la photo -->
+                                                                        <!-- au chargement, charge les objets + charge les catégories en fonction de la BDD -->
 <br>
 <div style="text-align: center;">
     <img src="img/sound2.jpg" alt="falc'ohm system " id="imgCouv">
@@ -48,7 +56,7 @@
                     <h2>Ω Présentation de notre matériel </h2>
 
                     <br>
-                    <form onchange="tri()">
+                    <form onchange="tri()"> <!-- choix de la catégorie a afficher -->
                     <label for="categ">Choisissez une catégorie</label>
                     <select id="categ">
                         <option>Tout</option>
@@ -75,14 +83,14 @@
                 <div class="section" id="sectionContact">
                     <h2>Ω Contacts </h2>
                     <div id="info">
-                        <a href="mailto:falcohm6TM@outlook.com" style="color: white; margin-bottom: 1em;">falcohm6TM@outlook.com</a><br>
-                        <a href="https://www.facebook.com/Falcohm6TM/" target="_blank"> <img src="img/facebook.png" alt="logo Facebook" width="30px" height="30px"></a>
+                        <a href="mailto:falcohm6TM@outlook.com" style="color: white; margin-bottom: 1em;">falcohm6TM@outlook.com</a><br>  <!-- si vous voulez louer de matériel audio n'hésitez pas :)-->
+                        <a href="https://www.facebook.com/Falcohm6TM/" target="_blank"> <img src="img/facebook.png" alt="logo Facebook" width="30px" height="30px"></a>  <!-- liens facebook -->
                         <a href="https://www.instagram.com/falcohm6tm/" target="_blank"><img src="img/logoInstagram.png" alt="logo Instagram" width="30px" height="30px"></a>
                     </div>
                     <br>
                     <?php $nameErr = $emailErr = $spam =  ""; ?>
                     <div id="form" >
-                        <form name="contact" id="contact" onsubmit="ajoutPersonne(this);return false;">
+                        <form name="contact" id="contact" onsubmit="ajoutPersonne(this);return false;"> <!-- ajoute la personne dans la BDD -->
                             <label for="nom">Nom</label><br>
                             <input  name="nom" id="nom" type="text" maxlength="15" required placeholder="Nom">
                             <input id="prenom" name="prenom" type="text" required placeholder="Prénom">
