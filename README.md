@@ -68,4 +68,45 @@ pour une éventuelle location
     Auteur = Louis
     
 # Détail DB
-    
+  -categories :
+  -
+    Il s'agit de la table des catégories.
+    pk = id_categorie.
+    Cette table comprend deux collones :
+        id_categorie qui est auto incrémentée et est un entié.
+        nomCateg qui est un varchar(100) regrouppant les noms des catégories. 
+  -contact :
+  -
+    Il sagit de la tables des clients.
+    pk = id_contact.
+    Cette table comprend quattres collones :
+        id_contact qui est auto incrémentée et est un entié.
+        nom qui est un varchar(30) regrouppant les noms des clients. 
+        prenom qui est un varchar(30) regrouppant les prénoms des clients. 
+        mail qui est un varchar(100) regrouppant les adresses emais des clients. 
+  -materiels :
+  -
+    Il sagit de la tables du matériel disponible à la location.
+    pk = id_materiel.
+    Cette table comprend quattres collones :
+        id_materiel qui est auto incrémentée et est un entié.
+        id_categorie qui est auto incrémentée et est un entié. 
+        description qui est un varchar(1000) regrouppant les descriptions des produits disponibles. 
+        nom qui est un varchar(100) regrouppant les noms des produits disponibles.   
+  -mp :
+  -
+    Il sagit de la tables des messages clients présents dans la BDD.
+    pk = id_mp.
+    Cette table comprend trois collones :
+        id_mp qui est auto incrémentée et est un entié.
+        id_contact qui est auto incrémentée et est un entié. 
+        mp qui est un long varchar, il est le message du client. 
+  -utilisateurs :
+  -
+    Il sagit de la tables des utilisateurs administrateurs de la BDD.
+    pk = id_utilisateur.
+    Cette table comprend trois collones :
+        id_utilisateur qui est auto incrémentée et est un entié.
+        pseudo qui est un varchar(30) regrouppant les pseudos des administrateurs. 
+        psw qui est un varchar(30) regrouppant les mots de passes des administrateurs.       
+          
