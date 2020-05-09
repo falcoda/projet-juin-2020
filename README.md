@@ -15,19 +15,19 @@ pour une éventuelle location
 # Aspects implémentés
 -Création de l'HTML en fonction des articles présents dans la base de donnée. 
 -
-  =>Cela comprend la liste des catégories, les différentes photos et noms du matériel ainsi que les fenêtres de descriptions.
+  Cela comprend la liste des catégories, les différentes photos et noms du matériel ainsi que les fenêtres de descriptions.
 -Récuperation des noms, prénoms, mails et messages des utilisateurs du site.
 -
-  =>Les utilisateurs peuvent laisser un message avec leurs coordonnées.
+  Les utilisateurs peuvent laisser un message avec leurs coordonnées.
 -Interface de connexion admin.
 -
   =>Les administrateurs peuvent se connecter pour accèder à d'autres fonctionnalitées.
 -Possibilité d'ajouter des articles.
 -
-  =>Les administrateurs peuvent rajouter des articles dans la base de donnée.
+  Les administrateurs peuvent rajouter des articles dans la base de donnée.
 -Possibilité d'affiché les messages reçus.
 -
-  =>Les administrateurs peuvent regarder les messages et utilisateurs présents dans la base de donnée.
+  Les administrateurs peuvent regarder les messages et utilisateurs présents dans la base de donnée.
   
 # Détail api rest 
 -ajout : Permet d'ajouter du matériel dans la BDD
