@@ -2,10 +2,10 @@
 Site pour une ASBL de location de matériel son/lumière.
 
 # Présentation de l'équipe 
--Diego Marting Lenoir\n
--Derwa Alexandre (créateur de l'ASBL)\n
--Louis Carlier\n
--Dallenogare Corentin (créateur de l'ASBL)\n
+*Diego Marting Lenoir
+*Derwa Alexandre (créateur de l'ASBL)
+*Louis Carlier
+*Dallenogare Corentin (créateur de l'ASBL)
 
 # Description du projet
 Le projet est un site d'une ASBL proposant des services de location de matériel son et lumière.
