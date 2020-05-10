@@ -115,3 +115,7 @@ pour une éventuelle location
         pseudo qui est un varchar(30) regrouppant les pseudos des administrateurs. 
         psw qui est un varchar(30) regrouppant les mots de passes des administrateurs.       
           
+# Schéma relationnel :
+  
+  ![Schéma Relationnel](SchemaRelationnel.png)
+          
