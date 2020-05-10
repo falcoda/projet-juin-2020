@@ -21,7 +21,7 @@ insert into "DBA".mp (id_mp,mp,id_contact) VALUES(10,'aujourdhui',8);
 insert into "DBA".mp (id_mp,mp,id_contact) VALUES(11,'tomber',8);
 insert into "DBA".mp (id_mp,mp,id_contact) VALUES(12,'sur une pierre',8);
 insert into "DBA".mp (id_mp,mp,id_contact) VALUES(13,'un matin',9);
-insert into "DBA".mp(id_mp,mp,id_contact) VALUES(14,"il est venu",9);
+insert into "DBA".mp(id_mp,mp,id_contact) VALUES(14,'il est venu',9);
 insert into "DBA".mp (id_mp,mp,id_contact) VALUES(15,'test',10);
 
 insert into "DBA".utilisateurs (id_utilisateur,pseudo,psw) VALUES(1,'louis','ephec');
