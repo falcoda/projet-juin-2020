@@ -1,3 +1,8 @@
+/**
+    ajoute le matériel passé par un formulaire
+    @auteur Marting Lenoir Diego he201772
+    @return {boolean} false
+  **/
 function ajout() { //fonction d'ajout matériels
     let fo = document.getElementById('form');   //récup du formulaire
     let selectElmt = document.getElementById("catego");  //récup des catégories

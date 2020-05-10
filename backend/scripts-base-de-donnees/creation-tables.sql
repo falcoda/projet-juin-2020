@@ -33,3 +33,8 @@ CREATE TABLE "DBA"."utilisateurs" (
 	"psw" VARCHAR(30) NULL,
 	PRIMARY KEY ( "id_utilisateur" ASC )
 ) IN "system";
+
+ALTER TABLE "DBA"."materiels" ADD CONSTRAINT "categories" FOREIGN KEY ( "id_categorie" ASC ) REFERENCES "DBA"."categories" ( "id_categorie" );
+
+ALTER TABLE "DBA"."mp" ADD CONSTRAINT "contact" FOREIGN KEY ( "id_contact" ASC ) REFERENCES "DBA"."contact" ( "id_contact" );
+

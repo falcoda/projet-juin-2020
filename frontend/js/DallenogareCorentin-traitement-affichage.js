@@ -1,5 +1,10 @@
 let tablObj ;
 
+/**
+ crée un tableau d'objet
+ @auteur Dallenogare Corentin he201885
+
+ **/
 function chargerObj(){
     let xhr = new XMLHttpRequest(); //requete a la db
     xhr.open("get",'http://localhost/creation', true);  //recupère un tableau d'objet
@@ -10,6 +15,12 @@ function chargerObj(){
     xhr.send(); //envois
 }
 
+/**
+ crée une chaine html et la remplace dans le html
+ @auteur Dallenogare Corentin he201885
+ @param tabl - tableau d'objet contenant les articles
+
+ **/
 function createHtml(tabl) { //creation de l'html
     let html = "";
     let position= 0;      //initialisation des variables
@@ -43,7 +54,12 @@ function createHtml(tabl) { //creation de l'html
     createModal(tabl); //appèle la fonction pour créer les modales
 }
 
+/**
+ crée une chaine html et la remplace dans le html
+ @auteur Dallenogare Corentin he201885
+ @param {string} id - le nom de l'id ou va être introduit la chaine
 
+ **/
 function chargerCateg(id) {  //créer la liste des catégories en fonctions de la db
     let xhr =new XMLHttpRequest(); //création d'une nouvelle requète
     xhr.open("get","http://localhost/categorie", true);  //demande une liste des catégories
@@ -59,7 +75,12 @@ function chargerCateg(id) {  //créer la liste des catégories en fonctions de l
     xhr.send();  //envois
 
 }
+/**
+ permet d'afficher les articles d'une catégorie précise
+ créer aussi les modales correspondantes à la catégorie
+ @auteur Dallenogare Corentin he201885
 
+ **/
 function tri(){   //fonction permettant d'afficher que certaines catégories
     let tablObj2 = tablObj.slice(); //copie du tableau
 
@@ -83,6 +104,13 @@ function tri(){   //fonction permettant d'afficher que certaines catégories
 
 }
 
+/**
+ crée une chaine html et la remplace dans le html
+ crée les modales des articles présent dans le tableau
+ @auteur Dallenogare Corentin he201885
+ @param tabl -tableau d'objet
+
+ **/
 function createModal(tabl){  //création de la modal en fonction de la BDD
     let html=" <div class='modalContent'>"+
         "<span class='modalFermer' onclick='closeModal()' style='cursor:pointer'>X</span>"+
@@ -103,18 +131,26 @@ function createModal(tabl){  //création de la modal en fonction de la BDD
 
 }
 
+/**
+ affichage de l'html présent dans la BDD
+ @auteur Dallenogare Corentin he201885
 
+ **/
 function chargerMsg() {  //permet d'afficher les messages des personnes
 
     let xhr = new XMLHttpRequest();
     xhr.open('get','http://localhost/messages',true);
     xhr.onload= function() {
         document.getElementById("sectionMessages").innerHTML = xhr.response; //recuperation de l'html créé dans la DDB
-        document.getElementById("body").style.height = (document.getElementsByTagName('p').length + document.getElementsByTagName('b').length *7)+"em"; //ajustement de la hauteur
+        document.getElementById("body").style.height = (document.getElementsByTagName('p').length + document.getElementsByTagName('b').length *7)+"%"; //ajustement de la hauteur
     };
     xhr.send() ;
 }
+/**
+ Efface l'html présent dans l'id body de la page ajoutMMateriel.html
+ @auteur Dallenogare Corentin he201885
 
+ **/
 function cacherMsg() { //cacher les messages
     document.getElementById('sectionMessages').innerHTML="";
     document.getElementById("body").style.height =10+"em";
