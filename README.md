@@ -61,11 +61,16 @@ pour une éventuelle location
     Il récupère les noms, prénoms et messages des clients et les renvoies sous forme de chaine html (type= RAW)
     Utilise un group by.
     Auteur = Corentin
--userConnexion : permet la connexion des administrateurs à la BDD
+-userConnexion : permet la connexion des administrateurs à la BDD.
 -
     Il ne prend rien en paramètre.
     Il récupère les pseudos et mots de passes dans la BDD (type = JSON)
     Auteur = Louis
+-fonction verification : permet de verifier si un client est dans la base de donnée.
+-
+    Elle prend en paramètre un char(50) qui est le mail du client.
+    Elle retourne NULL si le client n'est pas dans la BDD et l'id_contact si il est présent.
+    Auteur = commun
     
 # Détail DB
   -categories :
