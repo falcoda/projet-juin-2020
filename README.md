@@ -116,5 +116,6 @@ pour une éventuelle location
         psw qui est un varchar(30) regrouppant les mots de passes des administrateurs.       
           
 # Schéma relationnel :
+
     ![Schéma Relationnel](SchemaRelationnel.png)
           
