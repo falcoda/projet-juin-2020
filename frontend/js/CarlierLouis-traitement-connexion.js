@@ -1,3 +1,7 @@
+/**
+ @auteur Carlier Louis he201798
+ **/
+
 function connect() {
     let fo = document.getElementById('form');   //récup du formulaire
     let user = fo.nom.value;
