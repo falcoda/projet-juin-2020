@@ -96,7 +96,7 @@
                             <input id="prenom" name="prenom" type="text" required placeholder="Prénom">
                             <br>
                             <label for="email" >E-Mail</label><br>
-                            <input name="email" id="email" type="email" required placeholder="E-Mail"><br>
+                            <input name="email" id="email" type="email" required placeholder="E-Mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
                             <label for="message">Commentaire</label><br>
                             <textarea name="message" id="message"  required style="width: 60% ;height:100px" placeholder="Message"></textarea><br>
                             <button type="submit" id="submit" name="submit"style="width: 70px;" value="send" name="mailForm">Envoyer</button>
