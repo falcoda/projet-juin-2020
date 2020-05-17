@@ -6,9 +6,15 @@ function ajoutPersonne(formulaire){
     @param {HTMLForms} formulaire html (this)
     @return {boolean} false
      */
+    document.getElementById("verif").innerHTML = "formulaire soumis";
     let xhr = new XMLHttpRequest();
     xhr.open('get',"http://localhost/ajoutPersonne?nom=" + formulaire["nom"].value + "&prenom=" + formulaire["prenom"].value
         + "&mail=" + formulaire["email"].value + "&mp=" + formulaire["message"].value , true);
+
     xhr.send();
+    formulaire["nom"].value ="";
+    formulaire["prenom"].value ="";
+    formulaire["email"].value ="";
+    formulaire["message"].value ="";
     return false;
 }

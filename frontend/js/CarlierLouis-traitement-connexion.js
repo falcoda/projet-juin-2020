@@ -15,6 +15,7 @@ function connect() {
                 document.location.href ="ajoutMateriel";
             }
         }
+        document.getElementById("verif").innerHTML = "Pseudo ou mot de passe incorrect";
     };
     xhr.send();
     console.log("erreur");
