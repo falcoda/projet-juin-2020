@@ -6,14 +6,16 @@
     <script src="js/MartingLenoirDiego-traitement-ajoutMateriel.js"></script>
     <script src="js/DallenogareCorentin-traitement-affichage.js"></script>
     <script src="js/falc.js"></script>
+    <link href="css/stylesheet.css" rel="stylesheet">
 </head>
 <body  onload="chargerCateg('catego')" >
-<div id="body" style="background-color: lightslategray; height: 10em; margin-top: 10em; width: 65%; ">
+<button onclick="document.location.href='siteFalc'" style="position: relative; right: 45%;top:14em;z-index: 50">Home</button>
+<div id="body" style="background-color: lightslategray; margin-top: 10em;height: 12em; width: 65%; ">
     <form onsubmit="return ajout()" id="form" style="padding-top: 5%;"> <!--  formulaire d'envoie pour la création dans la db des matériels  -->
-        <label for="nom">Nom :</label><input type="text" name="nom" id="nom">
-        <label for="desc">Description :</label><input type="text" name="description" id="desc">
-        <label for="catego">Categorie :</label>
-        <select id="catego">
+        <label class="ajoutForm" for="nomMatos">Nom :</label><input class="ajoutForm" type="text" name="nom" id="nomMatos"><br>
+        <label class="ajoutForm" for="desc">Description :</label><input class="ajoutForm" type="text" name="description" id="desc"><br>
+        <label class="ajoutForm" for="catego">Categorie :</label>
+        <select class="ajoutForm" id="catego">
         </select>
         <input type="submit">
     </form>

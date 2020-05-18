@@ -11,11 +11,14 @@ function connect() {
     xhr.onload=function() {
         xhr=JSON.parse(xhr.response);
         for(let i=0; i<xhr.length; i++) {
-            if((xhr[i].pseudo==user) & (xhr[i].psw==psw)){
+            if((xhr[i].pseudo===user) && (xhr[i].psw===psw)){
                 document.location.href ="ajoutMateriel";
             }
+            else{
+                document.getElementById("verif").innerHTML = "Pseudo ou mot de passe incorrect";
+            }
         }
-        document.getElementById("verif").innerHTML = "Pseudo ou mot de passe incorrect";
+
     };
     xhr.send();
     console.log("erreur");

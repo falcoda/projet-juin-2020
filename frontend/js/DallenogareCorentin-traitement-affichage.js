@@ -142,7 +142,7 @@ function chargerMsg() {  //permet d'afficher les messages des personnes
     xhr.open('get','http://localhost/messages',true);
     xhr.onload= function() {
         document.getElementById("sectionMessages").innerHTML = xhr.response; //recuperation de l'html créé dans la DDB
-        document.getElementById("body").style.height = (document.getElementsByTagName('p').length + document.getElementsByTagName('b').length *7)+"%"; //ajustement de la hauteur
+        document.getElementById("body").style.height = (document.getElementsByTagName('p').length + document.getElementsByTagName('b').length-3)+"1%"; //ajustement de la hauteur
     };
     xhr.send() ;
 }
@@ -153,5 +153,5 @@ function chargerMsg() {  //permet d'afficher les messages des personnes
  **/
 function cacherMsg() { //cacher les messages
     document.getElementById('sectionMessages').innerHTML="";
-    document.getElementById("body").style.height =10+"em";
+    document.getElementById("body").style.height =12+"em";
 }

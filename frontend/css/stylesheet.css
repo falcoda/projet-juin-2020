@@ -291,19 +291,6 @@ img.demo {
     background-color: red;
 }
 
-#info{
-    position: absolute;
-    float: left;
-    width: 35%;
-    top: 250%;
-}
-
-#form{
-    position: relative;
-    float: right;
-    right: 25%;
-    width: 50%;
-}
 
 div#info a {
     margin-bottom: 30px;
@@ -314,3 +301,7 @@ div#info a {
     text-align: center;
 }
 
+.ajoutForme{
+    padding-bottom: 3px;
+
+}
