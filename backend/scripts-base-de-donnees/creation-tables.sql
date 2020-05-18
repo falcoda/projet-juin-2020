@@ -14,11 +14,12 @@ CREATE TABLE "DBA"."contact" (
 
 CREATE TABLE "DBA"."materiels" (
 	"id_materiel" INTEGER NOT NULL DEFAULT AUTOINCREMENT,
-	"nom" VARCHAR(100) NULL,
-	"description" VARCHAR(1000) NULL,
+	"nom" VARCHAR(100) NOT NULL UNIQUE,
+	"description" LONG VARCHAR NULL,
 	"id_categorie" INTEGER NULL,
 	PRIMARY KEY ( "id_materiel" ASC )
 ) IN "system";
+
 
 CREATE TABLE "DBA"."mp" (
 	"id_mp" INTEGER NOT NULL DEFAULT AUTOINCREMENT,
