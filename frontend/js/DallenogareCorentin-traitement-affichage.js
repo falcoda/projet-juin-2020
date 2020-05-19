@@ -22,11 +22,14 @@ function chargerObj(){
 
  **/
 function createHtml(tabl) { //creation de l'html
+    let choixProduit ="";
     let html = "";
     let position= 0;      //initialisation des variables
     let count = 1;
     let hauteur=0;
     for(let i in tabl){  //boucle dans le tableau
+
+        choixProduit+="<option value='"+tabl[i].id+"' id='"+tabl[i].id+"'>"+tabl[i].nom+"</option>";
 
         if (i%2 ===0){  //si pair ajoute l'image de droite
             html += "<div class='group2'> <div class='collection' onmouseout='zoomOut("+i+")' onmouseover='zoomeIn("+i+")' onclick='openModal();currentDiv("+count+")' style='  position: absolute; right:50%; top:"+position+"px;width: 210px; height: 400px; '>"+
@@ -51,6 +54,7 @@ function createHtml(tabl) { //creation de l'html
     }
     document.getElementsByClassName("collectionAll")[0].style.height = hauteur+"px";  //permet d'ajuster la hauteur
     document.getElementsByClassName("collectionAll")[0].innerHTML=html;  //remplace le html présent par celui crée
+    document.getElementById("choixProduit").innerHTML+=choixProduit;
     createModal(tabl); //appèle la fonction pour créer les modales
 }
 
@@ -155,3 +159,4 @@ function cacherMsg() { //cacher les messages
     document.getElementById('sectionMessages').innerHTML="";
     document.getElementById("body").style.height =12+"em";
 }
+
