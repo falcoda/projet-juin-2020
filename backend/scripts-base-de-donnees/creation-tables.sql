@@ -39,3 +39,4 @@ ALTER TABLE "DBA"."materiels" ADD CONSTRAINT "categories" FOREIGN KEY ( "id_cate
 
 ALTER TABLE "DBA"."mp" ADD CONSTRAINT "contact" FOREIGN KEY ( "id_contact" ASC ) REFERENCES "DBA"."contact" ( "id_contact" );
 
+ALTER TABLE "DBA"."mp" ADD CONSTRAINT "fk_mp_materiel" FOREIGN KEY ( "id_materiel" ASC ) REFERENCES "DBA"."materiels" ( "id_materiel" );
